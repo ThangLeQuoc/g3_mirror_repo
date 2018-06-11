@@ -1,5 +1,5 @@
 # Food Vending Machine
-It's time for food :hamburger:
+It's time for food 
 ## Foreword
 This is a small OOP puzzle quiz about Solid Programming Principle. Developer will have to apply OOP principles to solve the problem.
 ## Business Specification
@@ -30,7 +30,7 @@ of constants as conversion rate.
 - `FoodVendingMachine` has `addBalance` method which consume `Banknote`, `addFood` to fill up the machine
 
 ![Food Vending Machine Class Diagram](https://i.imgur.com/SOxOmVG.png)
-### The All-knowing Food Vending Machine :slot_machine: (candy)  :beer
+### The All-knowing Food Vending Machine
 Adnovum company hired a monkey coder to implement the machine sets, the hardest part is the currency conversion handle, and our monkey coder had no problem to handle it "nicely"
 ```
 @Override
@@ -106,10 +106,10 @@ The monkey coder might not be aware that stuffing too many unrelated functionali
 
 Seeing the horrible over-generous vending machine, Adnovum company decide to hire some **Solid Programmers** teams to have the problem fixed up.
 
-### What should the Solid Programmers do :construction_worker:
+### What should the Solid Programmers do 
 - Can you untie the knot inside the vending machine ?
 - Make sure yours test cases cover all most all the code. Luckily the monkey coder
 already write some test cases, so you can quickly refer and make a good use from them
 
-###### From The Green Rubber Ducks :hatching_chick: Team with :heart:
+###### From The Green Rubber Ducks Team
 
