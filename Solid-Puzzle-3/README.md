@@ -30,7 +30,7 @@ of constants as conversion rate.
 - `FoodVendingMachine` has `addBalance` method which consume `Banknote`, `addFood` to fill up the machine
 
 ![Food Vending Machine Class Diagram](https://i.imgur.com/SOxOmVG.png)
-### The All-knowing Food Vending Machine :slot_machine: :ice_cream:  :beer:
+### The All-knowing Food Vending Machine :slot_machine: (candy)  :beer
 Adnovum company hired a monkey coder to implement the machine sets, the hardest part is the currency conversion handle, and our monkey coder had no problem to handle it "nicely"
 ```
 @Override
@@ -104,7 +104,7 @@ Adnovum company hired a monkey coder to implement the machine sets, the hardest 
 ## What's going wrong ?
 The monkey coder might not be aware that stuffing too many unrelated functionality to the machine might lead to a bigger problem in the future. What if the company offer service to exchange CHF into VND banknotes for Swiss employee who comes to Vietnam, is it suitable if we tell him to reach the vending machine to get what he wanted ? And what if another type of currency, namely _Hungarian Forint_ is added, we might have to dive into the machine implementation and add modification as well.
 
-Seeing the horrible over-generous vending machine, Adnovum company design to hire some **Solid Programmers** teams to have the problem fixed up.
+Seeing the horrible over-generous vending machine, Adnovum company decide to hire some **Solid Programmers** teams to have the problem fixed up.
 
 ### What should the Solid Programmers do :construction_worker:
 - Can you untie the knot inside the vending machine ?
