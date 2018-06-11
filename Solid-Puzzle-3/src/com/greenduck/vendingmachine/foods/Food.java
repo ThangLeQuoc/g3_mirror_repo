@@ -1,23 +1,27 @@
 package com.greenduck.vendingmachine.foods;
 
+import com.greenduck.vendingmachine.money.PriceTag;
+
+//TODO: Add javadoc, make it like a pro
 public abstract class Food {
+    
     private String name;
-    private int price;
+    private PriceTag priceTag;
     
     public String getName() {
         return name;
     }
         
-    public int getPrice() {
-        return price;
+    public PriceTag getPriceTag() {
+        return priceTag;
     }
     
     protected void setName(String name) {
         this.name = name;
     }
     
-    protected void setPrice(int price) {
-        this.price = price;
+    public void setPriceTag(PriceTag priceTag) {
+        this.priceTag = priceTag;
     }
     
 }
