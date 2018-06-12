@@ -9,6 +9,7 @@ at any circumstance
 - Whenever customer wants to have a newer version of service, developer will modify the code to add but he also needs
  needs to retain older versions for backward compatible. Newer version may reuse some functions of older ones, 
  it is also the reason why older versions are still maintained
+- Please visit this link for a complete UML diagram: https://aww.adnovum.ch/confluence/display/Adnvn/SOLID-Puzzle-2+UML+Diagram
  
 ## Situation
 V1 and V2 are no longer needed and customer wants a code clean up to get rid of V1 / V2
