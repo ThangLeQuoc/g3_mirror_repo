@@ -6,63 +6,73 @@ import java.util.List;
 import com.greenduck.vendingmachine.foods.Food;
 import com.greenduck.vendingmachine.money.Banknote;
 import com.greenduck.vendingmachine.money.Currency;
+import com.greenduck.vendingmachine.money.exchanger.Exchanger;
+import com.greenduck.vendingmachine.money.exchanger.ExchangerFactory;
 
 public abstract class FoodVendingMachine {
-    
-    public static final String ERR_MESSAGE_INVALID_FOOD_SELECTION = "Invalid Food Selection";
 
-    protected double balance;
+	public static final String ERR_MESSAGE_INVALID_FOOD_SELECTION = "Invalid Food Selection";
 
-    protected Currency currency;
+	protected double balance;
 
-    protected List<Food> foods;
+	protected Currency currency;
 
-    public FoodVendingMachine(Currency currency) {
-        this.foods = new ArrayList<>();
-        this.currency = currency;
-    }
+	protected List<Food> foods;
 
-    /**
-     * Change current accepted currency of the vending machine. This will also wipe
-     * out all current balance if there is a currency discrepancy.
-     */
-    public void setCurrency(Currency currency) {
-        if (!this.currency.equals(currency)) {
-            balance = 0;
-        }
-        this.currency = currency;
-    }
+	protected Exchanger exchanger;
 
-    public Currency getCurrency() {
-        return currency;
-    }
+	public FoodVendingMachine(Currency currency) {
+		this.foods = new ArrayList<>();
+		this.currency = currency;
 
-    public double getBalance() {
-        return balance;
-    }
+		exchanger = ExchangerFactory.getExchanger(currency);
+	}
 
-    public void printBalance() {
-        System.out.println("Current Balance: " + balance + " " + currency.name());
-    }
+	/**
+	 * Change current accepted currency of the vending machine. This will also wipe
+	 * out all current balance if there is a currency discrepancy.
+	 */
+	public void setCurrency(Currency currency) {
+		if (!this.currency.equals(currency)) {
+			balance = 0;
+		}
+		this.currency = currency;
 
-    public void addFood(Food food) {
-        this.foods.add(food);
-    }
+		exchanger = ExchangerFactory.getExchanger(currency);
+	}
 
-    public void setFoods(List<Food> foods) {
-        this.foods = foods;
-    }
-    
-    protected void verifyValidFoodSelection(int selectedIndex) {
-        if (selectedIndex >= this.foods.size()) {
-            throw new IllegalArgumentException(ERR_MESSAGE_INVALID_FOOD_SELECTION);
-        }
-    } 
-    
+	public Currency getCurrency() {
+		return currency;
+	}
 
-    /* Playground */
-    public abstract void addBalance(Banknote note);
+	/*
+	 * FIXME (tung Jun 14, 2018): using double to represent money is nearly criminal
+	 */
+	public double getBalance() {
+		return balance;
+	}
 
-    public abstract Food getFood(int selectedIndex);
+	public void printBalance() {
+		System.out.println("Current Balance: " + balance + " " + currency.name());
+	}
+
+	public void addFood(Food food) {
+		this.foods.add(food);
+	}
+
+	public void setFoods(List<Food> foods) {
+		this.foods = foods;
+	}
+
+	protected void verifyValidFoodSelection(int selectedIndex) {
+		if (selectedIndex >= this.foods.size()) {
+			throw new IllegalArgumentException(ERR_MESSAGE_INVALID_FOOD_SELECTION);
+		}
+	}
+
+	/* Playground */
+	public abstract void addBalance(Banknote note);
+
+	public abstract Food getFood(int selectedIndex);
 
 }

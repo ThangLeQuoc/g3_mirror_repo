@@ -294,6 +294,7 @@ public class FoodVendingMachineTest {
         assertEquals(expectedRemainingBalance, foodVendingMachine.getBalance(), FoodVendingTestConstant.EPSILON);
     }
 
+    @Test
     public void testBuyFood_ShouldBuyCHFTagFood_WithCHFMachineCurrency() {
 
         // given
