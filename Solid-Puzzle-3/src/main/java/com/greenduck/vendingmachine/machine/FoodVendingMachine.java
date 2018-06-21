@@ -6,6 +6,8 @@ import java.util.List;
 import com.greenduck.vendingmachine.foods.Food;
 import com.greenduck.vendingmachine.money.Banknote;
 import com.greenduck.vendingmachine.money.Currency;
+import com.greenduck.vendingmachine.money.converter.CurrencyConverter;
+import com.greenduck.vendingmachine.money.converter.CurrencyConverterFactory;
 
 public abstract class FoodVendingMachine {
     
@@ -14,12 +16,15 @@ public abstract class FoodVendingMachine {
     protected double balance;
 
     protected Currency currency;
+    
+    protected CurrencyConverter currencyConverter;
 
     protected List<Food> foods;
 
     public FoodVendingMachine(Currency currency) {
         this.foods = new ArrayList<>();
         this.currency = currency;
+        this.currencyConverter = CurrencyConverterFactory.getConverter(currency);
     }
 
     /**
@@ -31,6 +36,7 @@ public abstract class FoodVendingMachine {
             balance = 0;
         }
         this.currency = currency;
+        this.currencyConverter = CurrencyConverterFactory.getConverter(currency);
     }
 
     public Currency getCurrency() {
